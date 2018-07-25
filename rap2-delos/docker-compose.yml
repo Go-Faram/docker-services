@@ -17,7 +17,7 @@ services:
 
       # redis config
       - REDIS_URL=redis
-      - REDIS_PORT=6379
+      - REDIS_PORT=6380
 
       # production / development
       - NODE_ENV=production
