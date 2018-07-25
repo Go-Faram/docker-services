@@ -10,8 +10,9 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: '123456'
     volumes:
-      - $HOME/data/docker/mysql-data:/var/lib/mysql 
+      - $HOME/data/docker/mysql-data:/var/lib/mysql
       - $HOME/data/docker/downloads:/root/downloads
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --init-connect='SET NAMES utf8mb4;' --innodb-flush-log-at-trx-commit=0
 
 networks:
   default:
