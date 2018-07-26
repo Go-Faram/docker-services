@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+    mindoc:
+      image: trydofor/mindoc:0.10.1
+      container_name: mindoc
+      environment:
+        - DB_TYPE=mysql
+        - DB_HOST=mysql
+        - DB_PORT=3306
+        - DB_NAME=mindoc
+        - DB_USER=root
+        - DB_PASS=123456
+      ports:
+        - "9005:8181"
+      volumes:
+        - $HOME/data/docker/mindoc-data/uploads:/app/uploads
+        - $HOME/data/docker/mindoc-data/conf:/app/conf
+
+networks:
+  default:
+    external:
+      name: docker-net
